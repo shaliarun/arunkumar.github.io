@@ -98,7 +98,7 @@
             border-color: #4f46e5;
         }
 
-        /* Override to disable hover animation for the PDF card */
+        /* PDF Card Override: No lift, no border color change */
         .no-hover-effect:hover {
             transform: none !important;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05) !important;
@@ -142,6 +142,53 @@
         }
 
         .photo-frame:hover { border-radius: 60px; }
+
+        /* Modal specific styles */
+        #pdf-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            width: 100%;
+            height: 100%;
+            max-width: 1400px;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            transform: scale(1.1);
+            background: #ef4444;
+            color: white;
+        }
 
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
@@ -314,8 +361,8 @@
                         <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1 serif">E-Commerce Strategy</p>
                     </div>
 
-                    <!-- Single ID Link to PDF (Targeted as non-downloadable and no-hover) -->
-                    <a href="Single ID 2.0.pdf" target="_blank" class="cursor-pointer block">
+                    <!-- Single ID: triggers openPdfModal -->
+                    <div onclick="openPdfModal('Single ID 2.0.pdf')" class="cursor-pointer block">
                         <div class="img-container aspect-square rounded-[32px] glass-card mb-6 overflow-hidden no-hover-effect">
                             <img src="0001.jpg" alt="Single ID" onerror="this.style.opacity='0'" class="w-full h-full object-cover transition-all duration-700">
                         </div>
@@ -323,7 +370,7 @@
                             <span class="hello-gradient">Single</span> <span class="text-gradient">ID</span>
                         </h4>
                         <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1 serif">Identity Platform</p>
-                    </a>
+                    </div>
 
                     <div class="group cursor-pointer hover-bw">
                         <div class="img-container aspect-square rounded-[32px] glass-card mb-6 overflow-hidden">
@@ -469,6 +516,15 @@
         </p>
     </footer>
 
+    <!-- PDF Popup Modal -->
+    <div id="pdf-modal">
+        <div class="modal-content">
+            <div class="close-modal" onclick="closePdfModal()"><i class="fa-solid fa-xmark"></i></div>
+            <!-- #toolbar=0&navpanes=0&scrollbar=1 hides browser tools -->
+            <iframe id="pdf-frame" src="" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
+    </div>
+
     <script>
         const nav = document.getElementById('main-nav');
         window.addEventListener('scroll', () => {
@@ -497,6 +553,43 @@
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 1s cubic-bezier(0.2, 1, 0.3, 1)';
             observer.observe(el);
+        });
+
+        // PDF Modal Logic
+        function openPdfModal(pdfUrl) {
+            const modal = document.getElementById('pdf-modal');
+            const frame = document.getElementById('pdf-frame');
+            // Adding #toolbar=0 prevents standard browser download/print buttons
+            frame.src = pdfUrl + "#toolbar=0&navpanes=0";
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        }
+
+        function closePdfModal() {
+            const modal = document.getElementById('pdf-modal');
+            const frame = document.getElementById('pdf-frame');
+            frame.src = "";
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore background scrolling
+        }
+
+        // Disable right click on the modal and globally while modal is open to reinforce "View Only"
+        document.addEventListener('contextmenu', function(e) {
+            const modal = document.getElementById('pdf-modal');
+            if (modal.style.display === 'flex') {
+                e.preventDefault();
+            }
+        }, false);
+
+        // Disable some common shortcuts for saving/printing while modal is active
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('pdf-modal');
+            if (modal.style.display === 'flex') {
+                // Ctrl+S, Ctrl+P, Ctrl+U
+                if (e.ctrlKey && (e.key === 's' || e.key === 'p' || e.key === 'u')) {
+                    e.preventDefault();
+                }
+            }
         });
     </script>
 </body>
