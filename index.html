@@ -98,14 +98,6 @@
             border-color: #4f46e5;
         }
 
-        /* PDF Card Override: No lift, no border color change */
-        .no-hover-effect:hover {
-            transform: none !important;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05) !important;
-            background: rgba(255, 255, 255, 0.7) !important;
-            border-color: rgba(255, 255, 255, 0.5) !important;
-        }
-
         .img-container {
             background-color: #f1f5f9;
             position: relative;
@@ -143,53 +135,6 @@
 
         .photo-frame:hover { border-radius: 60px; }
 
-        /* Modal specific styles */
-        #pdf-modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(8px);
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-
-        .modal-content {
-            width: 100%;
-            height: 100%;
-            max-width: 1400px;
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 100;
-            background: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .close-modal:hover {
-            transform: scale(1.1);
-            background: #ef4444;
-            color: white;
-        }
-
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
@@ -213,7 +158,7 @@
                 <a href="#process" class="text-[11px] font-bold uppercase tracking-[0.2em] hover:text-indigo-600 transition-colors">My Approach</a>
                 <a href="#work" class="text-[11px] font-bold uppercase tracking-[0.2em] hover:text-indigo-600 transition-colors">My Portfolio</a>
                 <a href="#workshop" class="text-[11px] font-bold uppercase tracking-[0.2em] hover:text-indigo-600 transition-colors">Workshop</a>
-                <a href="#" target="_blank" class="text-[#0077b5] hover:scale-110 hover:opacity-80 transition-all text-xl">
+                <a href="https://www.linkedin.com/in/arun-kumar-11331716/" target="_blank" class="text-[#0077b5] hover:scale-110 hover:opacity-80 transition-all text-xl">
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
             </div>
@@ -248,8 +193,9 @@
                     <div class="aspect-[4/5] img-container photo-frame shadow-2xl bg-white border-8 border-white hover-bw">
                         <img src="My photo.jpg" alt="Arun Kumar" onerror="this.style.opacity='0'" class="w-full h-full object-cover">
                     </div>
-                    <div class="absolute -bottom-6 -right-6 glass-card p-8 rounded-2xl border-indigo-100 border text-center min-w-[140px]">
-                        <p class="serif text-5xl text-gradient">10+</p>
+                    <!-- Updated to 14+ Years EXP and brought to very front using z-30 -->
+                    <div class="absolute -bottom-6 -right-6 glass-card p-8 rounded-2xl border-indigo-100 border text-center min-w-[140px] z-30">
+                        <p class="serif text-5xl text-gradient">14+</p>
                         <p class="text-[10px] font-black uppercase tracking-widest text-slate-400 serif">Years Exp</p>
                     </div>
                 </div>
@@ -351,7 +297,8 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     
-                    <div class="group cursor-pointer hover-bw">
+                    <!-- Item 01: Agentic AI -->
+                    <a href="https://www.canva.com/design/DAG8l8YcGaE/qPCss15ZUr6Mkx3PREeHRQ/edit?utm_content=DAG8l8YcGaE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="group cursor-pointer hover-bw block">
                         <div class="img-container aspect-square rounded-[32px] glass-card mb-6 overflow-hidden">
                             <img src="Dark Blue White Futuristic Illustration Artificial Intelligence Presentation (1).jpg" alt="Agentic AI" onerror="this.style.opacity='0'" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
                         </div>
@@ -359,20 +306,21 @@
                             <span class="hello-gradient">Agentic</span> <span class="text-gradient">AI</span>
                         </h4>
                         <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1 serif">E-Commerce Strategy</p>
-                    </div>
+                    </a>
 
-                    <!-- Single ID: triggers openPdfModal -->
-                    <a href="https://drive.google.com/file/d/1m-WTbn8xbP6wLS6UfKKS-FJX67FXlx-g/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cursor-pointer block">
-                        <div class="img-container aspect-square rounded-[32px] glass-card mb-6 overflow-hidden no-hover-effect">
-                            <img src="0001.jpg" alt="Single ID" onerror="this.style.opacity='0'" class="w-full h-full object-cover transition-all duration-700">
+                    <!-- Item 02: Single ID -->
+                    <a href="https://drive.google.com/file/d/1m-WTbn8xbP6wLS6UfKKS-FJX67FXlx-g/view?usp=drive_link" target="_blank" class="group cursor-pointer hover-bw block">
+                        <div class="img-container aspect-square rounded-[32px] glass-card mb-6 overflow-hidden">
+                            <img src="0001.jpg" alt="Single ID" onerror="this.style.opacity='0'" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
                         </div>
                         <h4 class="text-2xl font-normal tracking-tight serif italic">
                             <span class="hello-gradient">Single</span> <span class="text-gradient">ID</span>
                         </h4>
                         <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1 serif">Identity Platform</p>
-                    </div>
+                    </a>
 
-                    <div class="group cursor-pointer hover-bw">
+                    <!-- Item 03: Knox Teams AI -->
+                    <a href="https://drive.google.com/file/d/11hHrBV5EdN7LdMFUjd93iIg2ZQ1Aa0k2/view?usp=drive_link" target="_blank" class="group cursor-pointer hover-bw block">
                         <div class="img-container aspect-square rounded-[32px] glass-card mb-6 overflow-hidden">
                             <img src="F1.jpg" alt="Knox Teams AI" onerror="this.style.opacity='0'" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
                         </div>
@@ -380,9 +328,10 @@
                             <span class="hello-gradient">Knox</span> <span class="text-gradient">Teams AI</span>
                         </h4>
                         <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1 serif">Collaboration</p>
-                    </div>
+                    </a>
 
-                    <div class="group cursor-pointer hover-bw">
+                    <!-- Item 04: Aries Washer -->
+                    <a href="https://drive.google.com/file/d/1KaVeSjHQUG1iq8zv7PS3KHmTT6KvLUTM/view?usp=drive_link" target="_blank" class="group cursor-pointer hover-bw block">
                         <div class="img-container aspect-square rounded-[32px] glass-card mb-6 overflow-hidden">
                             <img src="Aries1.jpg" alt="Aries Washer" onerror="this.style.opacity='0'" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
                         </div>
@@ -390,9 +339,10 @@
                             <span class="hello-gradient">Aries</span> <span class="text-gradient">Washer</span>
                         </h4>
                         <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1 serif">Industrial Concept</p>
-                    </div>
+                    </a>
 
-                    <div class="group cursor-pointer hover-bw">
+                    <!-- Item 05: Quantix 2.0 -->
+                    <a href="https://drive.google.com/file/d/1ZwbjCNy11HvD4mB65vkeyeeEvVFg-3Ss/view?usp=drive_link" target="_blank" class="group cursor-pointer hover-bw block">
                         <div class="img-container aspect-square rounded-[32px] glass-card mb-6 overflow-hidden">
                             <img src="Quantix1.jpg" alt="Quantix 2.0" onerror="this.style.opacity='0'" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
                         </div>
@@ -400,9 +350,10 @@
                             <span class="hello-gradient">Quantix</span> <span class="text-gradient">2.0</span>
                         </h4>
                         <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1 serif">Inventory Management</p>
-                    </div>
+                    </a>
 
-                    <div class="group cursor-pointer hover-bw">
+                    <!-- Item 06: ESTORE -->
+                    <a href="https://drive.google.com/file/d/11ODurqz64Ph4azwpQa4RNLM8PHisD7yM/view?usp=drive_link" target="_blank" class="group cursor-pointer hover-bw block">
                         <div class="img-container aspect-square rounded-[32px] glass-card mb-6 overflow-hidden">
                             <img src="Estore-Page 1 copy.jpg" alt="eStore" onerror="this.style.opacity='0'" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
                         </div>
@@ -410,9 +361,10 @@
                             <span class="hello-gradient">e</span><span class="text-gradient">Store</span>
                         </h4>
                         <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1 serif">Retail Tech</p>
-                    </div>
+                    </a>
 
-                    <div class="group cursor-pointer hover-bw">
+                    <!-- Item 07: TX360 -->
+                    <a href="https://drive.google.com/file/d/1EvlWWja9EoEstkPc31dtl3odPTdBUJ_r/view?usp=drive_link" target="_blank" class="group cursor-pointer hover-bw block">
                         <div class="img-container aspect-square rounded-[32px] glass-card mb-6 overflow-hidden">
                             <img src="TX3601.jpg" alt="TX 360" onerror="this.style.opacity='0'" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
                         </div>
@@ -420,9 +372,10 @@
                             <span class="hello-gradient">TX</span> <span class="text-gradient">360</span>
                         </h4>
                         <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1 serif">Design System</p>
-                    </div>
+                    </a>
 
-                    <div class="group cursor-pointer hover-bw">
+                    <!-- Item 08: Buddy4Study -->
+                    <a href="https://drive.google.com/file/d/11TonnqYdVDwS1B6Nr4pkLSzCAqMZgoLl/view?usp=drive_link" target="_blank" class="group cursor-pointer hover-bw block">
                         <div class="img-container aspect-square rounded-[32px] glass-card mb-6 overflow-hidden">
                             <img src="1.jpg" alt="Buddy4Study" onerror="this.style.opacity='0'" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
                         </div>
@@ -430,7 +383,7 @@
                             <span class="hello-gradient">Buddy</span><span class="text-gradient">4Study</span>
                         </h4>
                         <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1 serif">Education Mobile</p>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -440,36 +393,41 @@
                     <h3 class="text-3xl font-normal tracking-tighter serif italic">User Interface</h3>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-                    <div class="glass-card rounded-[32px] overflow-hidden group hover-bw">
+                    <!-- Item UI 01: Dashboard Designs -->
+                    <a href="https://www.canva.com/design/DAGuQBp7sFM/JWTF0B04P8ay2qMOCs9oOw/edit?utm_content=DAGuQBp7sFM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="glass-card rounded-[32px] overflow-hidden group hover-bw block">
                         <div class="aspect-[16/10] img-container">
-                            <img src="Dashboard design banner.jpg" alt="Dashboards" onerror="this.style.opacity='0'" class="w-full h-full object-cover">
+                            <img src="Dashboard design banner.jpg" alt="Dashboards" onerror="this.style.opacity='0'" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8">
                             <h4 class="text-2xl font-normal tracking-tighter serif italic text-center">
                                 <span class="hello-gradient">Dashboard</span> <span class="text-gradient">Designs</span>
                             </h4>
                         </div>
-                    </div>
-                    <div class="glass-card rounded-[32px] overflow-hidden group hover-bw">
+                    </a>
+
+                    <!-- Item UI 02: Accessory Portal -->
+                    <a href="https://www.canva.com/design/DAG8sF1Totk/9P9jzCgo0ZX7b9a1eKw9Tw/edit?utm_content=DAG8sF1Totk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="glass-card rounded-[32px] overflow-hidden group hover-bw block">
                         <div class="aspect-[16/10] img-container">
-                            <img src="2.1 Home Page - Find Model.jpg" alt="Portal" onerror="this.style.opacity='0'" class="w-full h-full object-cover">
+                            <img src="2.1 Home Page - Find Model.jpg" alt="Portal" onerror="this.style.opacity='0'" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8">
                             <h4 class="text-2xl font-normal tracking-tighter serif italic text-center">
                                 <span class="hello-gradient">Accessory</span> <span class="text-gradient">Portal</span>
                             </h4>
                         </div>
-                    </div>
-                    <div class="glass-card rounded-[32px] overflow-hidden group hover-bw">
+                    </a>
+
+                    <!-- Item UI 03: Quantix 2.0 UI -->
+                    <a href="https://www.canva.com/design/DAG8sCM5L5M/wOFlpijkbB1WPvR22_levQ/edit?utm_content=DAG8sCM5L5M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="glass-card rounded-[32px] overflow-hidden group hover-bw block">
                         <div class="aspect-[16/10] img-container">
-                            <img src="Quantix1.jpg" alt="Quantix UI" onerror="this.style.opacity='0'" class="w-full h-full object-cover">
+                            <img src="Quantix1.jpg" alt="Quantix UI" onerror="this.style.opacity='0'" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105">
                         </div>
                         <div class="p-8">
                             <h4 class="text-2xl font-normal tracking-tighter serif italic text-center">
                                 <span class="hello-gradient">Quantix</span> <span class="text-gradient">2.0 UI</span>
                             </h4>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -495,7 +453,6 @@
                 <div class="img-container aspect-[16/11] glass-card rounded-[50px] shadow-sm hover-bw p-2 bg-white/40"><img src="20240514_140426.jpg" onerror="this.style.opacity='0'" class="w-full h-full object-cover rounded-[40px]"></div>
                 <div class="img-container aspect-[16/11] glass-card rounded-[50px] shadow-sm hover-bw p-2 bg-white/40"><img src="20240514_154142.jpg" onerror="this.style.opacity='0'" class="w-full h-full object-cover rounded-[40px]"></div>
                 <div class="img-container aspect-[16/11] glass-card rounded-[50px] shadow-sm hover-bw p-2 bg-white/40"><img src="20240514_150732.jpg" onerror="this.style.opacity='0'" class="w-full h-full object-cover rounded-[40px]"></div>
-                <div class="img-container aspect-[16/11] glass-card rounded-[50px] shadow-sm hover-bw p-2 bg-white/40"><img src="20240515_091451.jpg" onerror="this.style.opacity='0'" class="w-full h-full object-cover rounded-[40px]"></div>
                 <div class="img-container aspect-[16/11] glass-card rounded-[50px] shadow-sm hover-bw p-2 bg-white/40"><img src="IMG_20221027_165614.jpg" onerror="this.style.opacity='0'" class="w-full h-full object-cover rounded-[40px]"></div>
                 <div class="img-container aspect-[16/11] glass-card rounded-[50px] shadow-sm hover-bw p-2 bg-white/40"><img src="IMG_20221027_160343.jpg" onerror="this.style.opacity='0'" class="w-full h-full object-cover rounded-[40px]"></div>
                 <div class="img-container aspect-[16/11] glass-card rounded-[50px] shadow-sm hover-bw p-2 bg-white/40"><img src="IMG_20221027_121053.jpg" onerror="this.style.opacity='0'" class="w-full h-full object-cover rounded-[40px]"></div>
@@ -515,15 +472,6 @@
             Arun Kumar // MMXXV Portfolio
         </p>
     </footer>
-
-    <!-- PDF Popup Modal -->
-    <div id="pdf-modal">
-        <div class="modal-content">
-            <div class="close-modal" onclick="closePdfModal()"><i class="fa-solid fa-xmark"></i></div>
-            <!-- #toolbar=0&navpanes=0&scrollbar=1 hides browser tools -->
-            <iframe id="pdf-frame" src="" width="100%" height="100%" frameborder="0"></iframe>
-        </div>
-    </div>
 
     <script>
         const nav = document.getElementById('main-nav');
@@ -554,47 +502,6 @@
             el.style.transition = 'all 1s cubic-bezier(0.2, 1, 0.3, 1)';
             observer.observe(el);
         });
-
-        // PDF Modal Logic
-        function openPdfModal(pdfUrl) {
-            const modal = document.getElementById('pdf-modal');
-            const frame = document.getElementById('pdf-frame');
-            // Adding #toolbar=0 prevents standard browser download/print buttons
-            frame.src = pdfUrl + "#toolbar=0&navpanes=0";
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Stop background scrolling
-        }
-
-        function closePdfModal() {
-            const modal = document.getElementById('pdf-modal');
-            const frame = document.getElementById('pdf-frame');
-            frame.src = "";
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore background scrolling
-        }
-
-        // Disable right click on the modal and globally while modal is open to reinforce "View Only"
-        document.addEventListener('contextmenu', function(e) {
-            const modal = document.getElementById('pdf-modal');
-            if (modal.style.display === 'flex') {
-                e.preventDefault();
-            }
-        }, false);
-
-        // Disable some common shortcuts for saving/printing while modal is active
-        document.addEventListener('keydown', function(e) {
-            const modal = document.getElementById('pdf-modal');
-            if (modal.style.display === 'flex') {
-                // Ctrl+S, Ctrl+P, Ctrl+U
-                if (e.ctrlKey && (e.key === 's' || e.key === 'p' || e.key === 'u')) {
-                    e.preventDefault();
-                }
-            }
-        });
     </script>
 </body>
 </html>
-
-
-
-
